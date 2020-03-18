@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CareBearStare.Bears;
 
 namespace CareBearStare
 {
-    class CareBearBase
+    abstract class CareBearBase
     {
-        public string Name { get; set; }
-        public BearColor Color { get; set; }
-        public string BellyBadge { get; set; }
+        public string Name { get; protected set; }
+        public BearColor Color { get; protected set; }
+        public string BellyBadge { get; protected set; }
 
         public abstract void Stare();
 
@@ -23,16 +24,5 @@ namespace CareBearStare
         }
     }
 
-    enum BearColor
-    {
-        Yellow,
-        Pink,
-        White,
-        Aqua,
-        Mauve,
-        Purple,
-        Gold,
-        Blue,
-        Brown
-    }
+
 }

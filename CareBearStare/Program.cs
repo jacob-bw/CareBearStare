@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using CareBearStare.Bears;
 
 namespace CareBearStare
 {
@@ -6,7 +8,17 @@ namespace CareBearStare
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var grumpyBear = new GrumpyBear();
+            var tenderHeart = new TenderHeart();
+            var tinderHeart = new TinderHeart();
+
+            var careBears = new List<CareBearBase> { grumpyBear, tenderHeart, tinderHeart };
+
+            foreach (var bear in careBears)
+            {
+                bear.Care("Nathan");
+                bear.Stare();
+            }
         }
     }
 }
