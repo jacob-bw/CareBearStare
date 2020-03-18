@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CareBearStare.Bears;
+using System.Linq;
 
 namespace CareBearStare
 {
@@ -19,6 +20,34 @@ namespace CareBearStare
                 bear.Care("Nathan");
                 bear.Stare();
             }
+
+            var namesThatStartWithT = careBears.Where(bear => bear.Name.StartsWith('T'));
+            var careBearNames = careBears.Select(bear => bear.Name);
+
+            var careBearNamesThatStartWithT = careBears
+                .Where(bear => bear.Name.StartsWith('T'))
+                .Select(bear => bear.Name);
+
+            var anyTinderHeart = careBears.Any(bear => bear is TinderHeart);
+            var allTinderHearts = careBears.All(bear => bear is TinderHeart);
+
+            var firstBear = careBears.First(); ;
+            var firstBearStartingWithT = careBears.First(bear => bear.Name.StartsWith('T'));
+
+            var otherList = new List<CareBearBase>();
+            //throws an exception
+            //var blowsup = careBears.First(bear => bear.Name.StartsWith('W'));
+            var works = careBears.FirstOrDefault(bear => bear.Name.StartsWith('W'));
+
+            var skippedGrumpy = careBears.Skip(1).Take(2);
+
+            var numberOfCharacters = careBears.Max(bear => bear.Name.Length);
+
+            var orderedBears = careBears.OrderByDescending(bear => bear.BellyBadge);
+
+
+            //Bedtime Bear, Birthday Bear, Cheer Bear, Friend Bear, Funshine Bear, Good Luck Bear, Grumpy Bear, Love-a-lot Bear, Tenderheart Bear, and Wish Bear.
+
         }
     }
 }
